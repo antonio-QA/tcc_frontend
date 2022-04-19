@@ -25,8 +25,8 @@ export class CategoriasPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public categoriaService: CategoriaService) {
-  }
+    public categoriaService: CategoriaService
+  ) { }
 
   ionViewDidLoad() {
     this.categoriaService.findAll()
@@ -35,4 +35,9 @@ export class CategoriasPage {
     },
     error => {});
   }
+
+  showProdutos(categoria_id : string) {
+    this.navCtrl.push('ProdutosPage', { categoria_id: categoria_id });
+  }
+
 }
